@@ -8,6 +8,7 @@ wb <- openxlsx::read.xlsx("Free+English+textbooks.xlsx")
 
 convert_to_dd <- function (url) {
   x <- gsub("http://doi.org/", "", url)
+  x <- gsub("/", "%2F", x)
   paste0("https://link.springer.com/content/pdf/", x, ".pdf")
 }
 
